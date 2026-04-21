@@ -1,0 +1,18 @@
+.register-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* full screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  overflow-y: auto !important;
+}
+
+.register-card {
+  max-height: 90vh;
+  /* ADD THIS LINE */
+}

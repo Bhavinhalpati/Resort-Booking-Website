@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: white;
+}
+
+/* Theme Orange Home */
+.theme-orange-home {
+  width: 100%;
+}
+
+/* Hero Section */
+.theme-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  /* prevent scale overflow */
+}
+
+@keyframes smoothFadeInOut {
+  0% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.theme-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  animation: smoothFadeInOut 1s ease-out forwards;
+}
+
+.theme-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  /* Slight darkening for text */
+  z-index: -1;
+}
+
+.theme-hero-content {
+  z-index: 10;
+  color: white;
+  margin-top: 50px;
+}
+
+.theme-hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  font-weight: 400;
+  white-space: pre-line;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.theme-book-btn {
+  background-color: #f9a826;
+  color: white;
+  border: none;
+  padding: 18px 45px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+
+.theme-book-btn:hover {
+  background-color: #df9118;
+}
+
+/* Arrows */
+.theme-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f9a826;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.theme-arrow:hover {
+  background-color: #df9118;
+}
+
+.left-arrow {
+  left: 5%;
+}
+
+.right-arrow {
+  right: 5%;
+}
+
+/* Booking Search Bar */
+.home-search-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: -130px auto 40px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+.home-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.search-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.search-field label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.search-field input,
+.search-field select {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 10px 5px;
+  border: none;
+  border-bottom: 2px solid #eee;
+  outline: none;
+  background: transparent;
+  color: #333;
+  transition: 0.3s;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+  border-bottom-color: #f9a826;
+}
+
+/* Guest Selector Dropdown */
+.guest-selector-display {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 10px 5px;
+  border-bottom: 2px solid #eee;
+  cursor: pointer;
+  color: #333;
+  transition: 0.3s;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 40px;
+}
+
+.guest-selector-display:hover {
+  border-bottom-color: #f9a826;
+}
+
+.guest-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  width: 280px;
+  z-index: 999;
+  margin-top: 15px;
+  border: 1px solid #eaeaea;
+}
+
+.guest-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 15px;
+}
+
+.guest-row:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.guest-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.guest-info strong {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #222;
+  font-weight: 700;
+}
+
+.guest-info span {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.guest-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.guest-controls button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: #555;
+}
+
+.guest-controls button:hover {
+  border-color: #f9a826;
+  background: #f9a826;
+  color: white;
+}
+
+.guest-controls span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  width: 16px;
+  text-align: center;
+  color: #333;
+}
+
+.search-submit-btn {
+  background-color: #f9a826;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  height: 50px;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.search-submit-btn:hover {
+  background-color: #df9118;
+}
+
+@media (max-width: 900px) {
+  .home-search-form {
+    flex-wrap: wrap;
+  }
+
+  .search-field {
+    flex: 1 1 40%;
+  }
+
+  .search-submit-btn {
+    flex: 1 1 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-field {
+    flex: 1 1 100%;
+  }
+}
+
+/* Popular Rooms Section */
+.popular-rooms-section {
+  padding: 30px 5%;
+  text-align: center;
+}
+
+.popular-rooms-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #222;
+  margin-bottom: 60px;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.popular-card {
+  border: 1px solid #e0e0e0;
+  background: white;
+  text-align: left;
+}
+
+.popular-card-img {
+  position: relative;
+  height: 280px;
+}
+
+.popular-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.price-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f9a826;
+  color: #222;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.popular-card-content {
+  padding: 25px;
+}
+
+.popular-card-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #222;
+  margin: 0 0 10px;
+}
+
+.stars {
+  color: #f9a826;
+  font-size: 16px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+.card-footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.duration {
+  color: #777;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.learn-more-btn {
+  background-color: #f9a826;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.learn-more-btn:hover {
+  background-color: #df9118;
+}
+
+/* EXPERIENCES SECTION */
+.experiences-section {
+  background-color: #faf9f7;
+  padding: 30px 5%;
+  text-align: center;
+}
+
+.experiences-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.experiences-header p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background: white;
+  padding: 40px 20px;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.exp-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.experience-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.experience-card p {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE DESIGN FOR NEW SECTIONS */
+@media (max-width: 900px) {
+  .popular-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .experiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .popular-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .experiences-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-hero-content h1 {
+    font-size: 48px;
+  }
+}

@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+
+.resort-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 20px 8% 0;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #0a1428 0%, #141e2f 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.resort-header.hidden {
+  transform: translateY(-100%);
+}
+
+/* Top Header Contact */
+.top-header-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-title {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.contact-value {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Center Logo */
+.center-logo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.center-logo:active {
+  color: red;
+}
+
+.center-logo h1 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.center-logo span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* Dark Navbar */
+.dark-navbar {
+  background: rgba(34, 34, 34, 0.85);
+  /* Dark translucent */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 60px;
+}
+
+.dark-nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 20px;
+  align-items: center;
+  height: 100%;
+}
+
+.dark-nav-links li {
+  height: 100%;
+}
+
+.dark-nav-links a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.dark-nav-links a:hover,
+.dark-nav-links a.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f9a826;
+}
+
+/* Right Side Actions */
+.nav-right-actions {
+  display: flex;
+  align-items: stretch;
+  /* Stretch children to fill the height */
+  height: 100%;
+}
+
+.nav-search-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+  /* subtle background instead of orange */
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 20px;
+  height: 100%;
+  cursor: pointer;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-search-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #f9a826;
+}
+
+/* --- Dropdown Styles --- */
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.nav-dropdown:hover .dropdown-toggle,
+.dropdown-toggle.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f9a826;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border-top: 3px solid #f9a826;
+  padding: 10px 0;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  color: #1a1a1a !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none !important;
+  padding: 12px 25px;
+  height: auto !important;
+  display: block;
+  letter-spacing: 1px;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a.active {
+  background: #f8f8f8 !important;
+  color: #f9a826 !important;
+  padding-left: 30px;
+  /* subtle slide effect */
+}
+
+.user-dropdown .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+/* User Icon Styling */
+.user-icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+/* CTA "BOOK NOW" Button in Navbar */
+.nav-cta-btn {
+  background: #f9a826 !important;
+  color: white !important;
+  padding: 0 30px !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 100%;
+  transition: background 0.3s ease;
+}
+
+.nav-cta-btn:hover {
+  background: #df9118 !important;
+  color: white !important;
+}
+
+/* User Profile Icon in Right Actions */
+.right-side-profile {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.profile-icon-only {
+  padding: 0 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.user-icon-round {
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+.nav-dropdown:hover .user-icon-round {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #f9a826;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-login-btn {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  height: 100%;
+  transition: 0.3s;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-login-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f9a826;
+}
